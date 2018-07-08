@@ -1,0 +1,3 @@
+@function t-font-size($key) {
+  @return map-get($s-font-sizes, $key);
+}
