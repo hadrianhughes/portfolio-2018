@@ -3,6 +3,7 @@
 
 $maxWidth: 1400px;
 $cols: 12;
+$gutter: 1rem;
 
 .row {
   margin: 0 auto;
@@ -17,6 +18,8 @@ $cols: 12;
 
 .column {
   float: left;
+  padding-left: $gutter;
+  padding-right: $gutter;
   width: 100%;
 
   &:last-child:not(:first-child) {
