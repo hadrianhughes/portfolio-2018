@@ -11,15 +11,15 @@ const IndexPage = ({ data }) => (
 
 export default IndexPage;
 
-// export const pageQuery = graphql`
-// query PageQuery {
-//   allContentfulPage {
-//     edges {
-//       node {
-//         id
-//         title
-//       }
-//     }
-//   }
-// }
-// `;
+export const pageQuery = graphql`
+query PageQuery {
+  allContentfulHomepage {
+    edges {
+      node {
+        title
+        subheading
+      }
+    }
+  }
+}
+`;
