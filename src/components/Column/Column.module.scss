@@ -1,0 +1,31 @@
+@import '../../styles/settings.scss';
+@import '../../styles/tools.scss';
+
+$gutter: 1rem;
+$cols: 12;
+
+.root {
+  float: left;
+  padding-left: $gutter;
+  padding-right: $gutter;
+  width: 100%;
+
+  &:last-child:not(:first-child) {
+    float: right;
+  }
+}
+
+@mixin responsiveClasses($bp) {
+  @for $i from 1 through $cols {
+    .#{$bp}_#{$i} {
+      width: percentage($i / $cols);
+    }
+  }
+};
+
+@include responsiveClasses(small);
+
+@include t-respond-to-min(small) {
+  @include responsiveClasses(medium);
+}
+
