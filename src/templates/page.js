@@ -15,3 +15,11 @@ PageComponent.defaultProps = {
 };
 
 export default PageComponent;
+
+export const pageQuery = graphql`
+  query pageQuery {
+    contentfulPage {
+      title
+    }
+  }
+`;
