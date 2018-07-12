@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import Header from '../components/header';
 import '../styles/global.scss';
 import '../styles/grid.scss';
 
@@ -15,7 +14,6 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
     <div className="row">
       <div className="column medium-12">
         {children()}
