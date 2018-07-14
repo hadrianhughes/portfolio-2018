@@ -1,6 +1,52 @@
 @import '../../styles/settings.scss';
 @import '../../styles/tools.scss';
 
+.root {
+  background-color: t-color(dark-grey);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.contentWrapper {
+  color: t-color(white);
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+
+  @include t-respond-to-min(large) {
+    left: 0;
+    padding-left: t-spacing(xlarge, 2);
+    text-align: left;
+    transform: translate(0, -50%);
+    width: auto;
+  }
+}
+
+.content {
+  display: inline-block;
+  text-align: left;
+}
+
+.heading {
+  @include t-respond-to-min(small) {
+    font-size: t-font-size(xxlarge);
+  }
+
+  @include t-respond-to-min(medium) {
+    font-size: t-font-size(huge);
+  }
+}
+
+.subheading {
+  @include t-respond-to-min(medium) {
+    font-size: t-font-size(xlarge);
+  }
+}
+
 .highlight {
   color: t-color(red);
 }

@@ -14,10 +14,8 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <div className="row">
-      <div className="column medium-12">
-        {children()}
-      </div>
+    <div>
+      {children()}
     </div>
   </div>
 );

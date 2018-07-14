@@ -1,14 +1,14 @@
 @font-face {
   font-family: 'FiraSans-ExtraLight';
-  src: url('../fonts/FiraSans-ExtraLight.ttf');
+  src: url('/static/FiraSans-ExtraLight.fb7e2ca1.ttf');
 }
 
 @font-face {
   font-family: 'FiraSans-ExtraLightItalic';
-  src: url('../fonts/FiraSans-ExtraLightItalic.ttf');
+  src: url('/static/FiraSans-ExtraLightItalic.f4522759.ttf');
 }
 
 @font-face {
   font-family: 'FiraSans-Regular';
-  src: url('../fonts/FiraSans-Regular.ttf');
+  src: url('/static/FiraSans-Regular.8a882846.ttf');
 }

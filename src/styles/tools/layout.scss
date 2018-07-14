@@ -2,3 +2,7 @@
   $ret: $px / $s-base-font-size;
   @return #{$ret}rem;
 }
+
+@function t-spacing($key, $multiplier: 1) {
+  @return t-rem(map-get($s-spacing, $key) * $multiplier);
+}
