@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
+import '../styles/settings/fonts.css';
 import '../styles/global.scss';
 
 const Layout = ({ children, data }) => (
