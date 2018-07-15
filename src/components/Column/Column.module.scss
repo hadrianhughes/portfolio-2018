@@ -13,12 +13,29 @@ $cols: 12;
   &:last-child:not(:first-child) {
     float: right;
   }
+
+  &::after {
+    content: '';
+    clear: both;
+    display: table;
+  }
 }
 
 @mixin responsiveClasses($bp) {
   @for $i from 1 through $cols {
     .#{$bp}_#{$i} {
       width: percentage($i / $cols);
+    }
+
+    .#{$bp}_centered {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .#{$bp}_centered,
+    .#{$bp}_centered:last-child:not(:first-child) {
+      float: none;
+      clear: both;
     }
   }
 };
@@ -27,5 +44,13 @@ $cols: 12;
 
 @include t-respond-to-min(small) {
   @include responsiveClasses(medium);
+}
+
+@include t-respond-to-min(medium) {
+  @include responsiveClasses(large);
+}
+
+@include t-respond-to-min(large) {
+  @include responsiveClasses(xlarge);
 }
 

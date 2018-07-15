@@ -3,6 +3,13 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Default Starter',
+    navigation: [{
+      label: 'Example 1',
+      url: '/404',
+    }, {
+      label: 'Example 2',
+      url: '/404',
+    }],
   },
   plugins: [
     'gatsby-plugin-react-helmet',

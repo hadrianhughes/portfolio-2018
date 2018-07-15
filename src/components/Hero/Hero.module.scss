@@ -9,24 +9,15 @@
 }
 
 .contentWrapper {
-  color: t-color(white);
-  left: 50%;
   position: absolute;
   text-align: center;
   top: 30%;
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%);
   width: 100%;
-
-  @include t-respond-to-min(large) {
-    left: 0;
-    padding-left: t-spacing(xlarge, 2);
-    text-align: left;
-    transform: translate(0, -50%);
-    width: auto;
-  }
 }
 
 .content {
+  color: t-color(white);
   display: inline-block;
   text-align: left;
 }

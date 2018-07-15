@@ -3,10 +3,12 @@ import Link from 'gatsby-link';
 
 import Hero from '../components/Hero';
 
-const IndexPage = ({ data }) => {
-  const { subheading } = data.allContentfulHomepage.edges[0].node;
-  return <Hero subheading={subheading} />;
-};
+const IndexPage = ({ data }) => (
+  <Hero
+    subheading={data.allContentfulHomepage.edges[0].node.subheading}
+    navigation={data.site.siteMetadata.navigation}
+  />
+);
 
 export default IndexPage;
 
@@ -17,6 +19,14 @@ query PageQuery {
       node {
         title
         subheading
+      }
+    }
+  }
+  site {
+    siteMetadata {
+      navigation {
+        label
+        url
       }
     }
   }
