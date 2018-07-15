@@ -42,6 +42,10 @@ $cols: 12;
 
 @include responsiveClasses(small);
 
+@include t-respond-to-min(xsmall) {
+  @include responsiveClasses(small);
+}
+
 @include t-respond-to-min(small) {
   @include responsiveClasses(medium);
 }

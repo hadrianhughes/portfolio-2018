@@ -8,9 +8,9 @@ import InpageNavigation from '../InpageNavigation';
 
 const Hero = ({ subheading, navigation }) => (
   <div className={s.root}>
-    <div className={s.contentWrapper}>
+    <div className={s.wrapper}>
       <Row>
-        <Column small={12} xlarge={9} smallCentered>
+        <Column xsmall={12} xlarge={9} smallCentered>
           <div className={s.content}>
             <h1 className={s.heading}>Hi, I'm <span className={s.highlight}>&lt;</span>Hadrian <span className={s.highlight}>/&gt;</span></h1>
             <p className={s.subheading}>{ subheading }</p>
@@ -18,7 +18,7 @@ const Hero = ({ subheading, navigation }) => (
         </Column>
       </Row>
       <Row>
-        <Column small={12}>
+        <Column xsmall={12}>
           <InpageNavigation items={navigation} />
         </Column>
       </Row>

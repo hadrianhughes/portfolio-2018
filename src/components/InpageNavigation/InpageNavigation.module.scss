@@ -2,10 +2,25 @@
 @import '../../styles/tools.scss';
 
 $tileSize: 120px;
+$tileSize--small: 200px;
+$tileSize--medium: 250px;
+$tileSize--large: 300px;
 
 .root {
   display: inline-block;
   width: calc((#{$tileSize} * 2) + #{t-spacing(medium)});
+
+  @include t-respond-to-min(small) {
+    width: calc((#{$tileSize--small} * 2) + #{t-spacing(medium)});
+  }
+
+  @include t-respond-to-min(medium) {
+    width: calc((#{$tileSize--medium} * 2) + #{t-spacing(medium)});
+  }
+
+  @include t-respond-to-min(large) {
+    width: calc((#{$tileSize--large} * 2) + #{t-spacing(large)});
+  }
 
   &::after {
     content: '';
@@ -23,8 +38,28 @@ $tileSize: 120px;
   position: relative;
   width: t-rem($tileSize);
 
+  @include t-respond-to-min(small) {
+    height: t-rem($tileSize--small);
+    width: t-rem($tileSize--small);
+  }
+
+  @include t-respond-to-min(medium) {
+    height: t-rem($tileSize--medium);
+    width: t-rem($tileSize--medium);
+  }
+
+  @include t-respond-to-min(large) {
+    height: t-rem($tileSize--large);
+    margin-bottom: t-spacing(large);
+    width: t-rem($tileSize--large);
+  }
+
   &:nth-child(odd) {
     margin-right: t-spacing(medium);
+
+    @include t-respond-to-min(large) {
+      margin-right: t-spacing(large);
+    }
   }
 }
 
@@ -36,4 +71,8 @@ $tileSize: 120px;
   text-align: center;
   text-decoration: none;
   width: 100%;
+
+  @include t-respond-to-min(medium) {
+    font-size: 2rem;
+  }
 }

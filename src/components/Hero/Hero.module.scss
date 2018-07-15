@@ -8,7 +8,7 @@
   width: 100%;
 }
 
-.contentWrapper {
+.wrapper {
   position: absolute;
   text-align: center;
   top: 50%;
@@ -21,6 +21,10 @@
   display: inline-block;
   margin-bottom: t-spacing(medium);
   text-align: left;
+
+  @include t-respond-to-min(large) {
+    margin-bottom: t-spacing(large);
+  }
 }
 
 .heading {
