@@ -17,12 +17,12 @@ const Hero = ({ subheading, navigation }) => (
           </div>
         </Column>
       </Row>
+      <Row>
+        <Column small={12}>
+          <InpageNavigation items={navigation} />
+        </Column>
+      </Row>
     </div>
-    <Row className={s.navWrapper}>
-      <Column small={12}>
-        <InpageNavigation items={navigation} />
-      </Column>
-    </Row>
   </div>
 );
 

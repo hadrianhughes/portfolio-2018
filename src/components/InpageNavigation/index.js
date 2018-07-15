@@ -2,7 +2,7 @@ import React from 'react';
 import s from './InpageNavigation.module.scss';
 
 const InpageNavigation = ({ items }) => (
-  <div>
+  <div className={s.root}>
     {
       items.map((item, i) => (
         <a className={s.item} href={item.url} key={i}>

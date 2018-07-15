@@ -9,6 +9,12 @@ module.exports = {
     }, {
       label: 'Example 2',
       url: '/404',
+    }, {
+      label: 'Example 3',
+      url: '/404',
+    }, {
+      label: 'Example 4',
+      url: '/404',
     }],
   },
   plugins: [

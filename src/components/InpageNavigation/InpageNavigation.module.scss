@@ -1,0 +1,39 @@
+@import '../../styles/settings.scss';
+@import '../../styles/tools.scss';
+
+$tileSize: 120px;
+
+.root {
+  display: inline-block;
+  width: calc((#{$tileSize} * 2) + #{t-spacing(medium)});
+
+  &::after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+
+.item {
+  background-color: t-color(grey);
+  display: block;
+  float: left;
+  height: t-rem($tileSize);
+  margin-bottom: t-spacing(medium);
+  position: relative;
+  width: t-rem($tileSize);
+  
+  &:nth-child(odd) {
+    margin-right: t-spacing(medium);
+  }
+}
+
+.itemLabel {
+  bottom: 0;
+  color: t-color(white);
+  padding-bottom: t-spacing(xsmall);
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
