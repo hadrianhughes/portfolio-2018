@@ -22,6 +22,12 @@
   margin-bottom: t-spacing(medium);
   text-align: left;
 
+  @include t-respond-to-min(medium) {
+    @include t-landscape {
+      margin-bottom: 0;
+    }
+  }
+
   @include t-respond-to-min(large) {
     margin-bottom: t-spacing(large);
   }
@@ -34,6 +40,12 @@
 
   @include t-respond-to-min(medium) {
     font-size: t-font-size(huge);
+  }
+
+  @include t-respond-to-max(large) {
+    @include t-landscape {
+      font-size: t-font-size(xxlarge);
+    }
   }
 }
 

@@ -1,10 +1,9 @@
 @import '../../styles/settings.scss';
 @import '../../styles/tools.scss';
 
-$tileSize: 120px;
-$tileSize--small: 200px;
+$tileSize: 110px;
+$tileSize--small: 180px;
 $tileSize--medium: 250px;
-$tileSize--large: 300px;
 
 .root {
   display: inline-block;
@@ -19,7 +18,11 @@ $tileSize--large: 300px;
   }
 
   @include t-respond-to-min(large) {
-    width: calc((#{$tileSize--large} * 2) + #{t-spacing(large)});
+    width: calc((#{$tileSize--medium} * 2) + #{t-spacing(large)});
+  }
+
+  @include t-landscape {
+    width: auto;
   }
 
   &::after {
@@ -41,24 +44,58 @@ $tileSize--large: 300px;
   @include t-respond-to-min(small) {
     height: t-rem($tileSize--small);
     width: t-rem($tileSize--small);
+
+    @include t-landscape {
+      height: t-rem($tileSize);
+      width: t-rem($tileSize);
+    }
   }
 
   @include t-respond-to-min(medium) {
     height: t-rem($tileSize--medium);
     width: t-rem($tileSize--medium);
+
+    @include t-landscape {
+      height: t-rem($tileSize);
+      width: t-rem($tileSize);
+    }
   }
 
   @include t-respond-to-min(large) {
-    height: t-rem($tileSize--large);
+    height: t-rem($tileSize--medium);
     margin-bottom: t-spacing(large);
-    width: t-rem($tileSize--large);
+    width: t-rem($tileSize--medium);
+
+    @include t-landscape {
+      height: t-rem($tileSize--small);
+      width: t-rem($tileSize--small);
+    }
   }
 
-  &:nth-child(odd) {
-    margin-right: t-spacing(medium);
+  @include t-respond-to-min(xlarge) {
+    height: t-rem($tileSize--medium);
+    width: t-rem($tileSize--medium);
+  }
+
+  @include t-portrait {
+    &:nth-child(odd) {
+      margin-right: t-spacing(medium);
+  
+      @include t-respond-to-min(large) {
+        margin-right: t-spacing(large);
+      }
+    }
+  }
+
+  @include t-landscape {
+    &:last-child {
+      margin-right: 0;
+    }
+
+    margin-right: t-spacing(small);
 
     @include t-respond-to-min(large) {
-      margin-right: t-spacing(large);
+      margin-right: t-spacing(medium);
     }
   }
 }
@@ -73,6 +110,12 @@ $tileSize--large: 300px;
   width: 100%;
 
   @include t-respond-to-min(medium) {
-    font-size: 2rem;
+    @include t-portrait {
+      font-size: t-font-size(large);
+    }
+  }
+
+  @include t-respond-to-min(large) {
+    font-size: t-font-size(large);
   }
 }
