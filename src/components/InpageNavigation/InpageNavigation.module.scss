@@ -22,7 +22,7 @@ $tileSize: 120px;
   margin-bottom: t-spacing(medium);
   position: relative;
   width: t-rem($tileSize);
-  
+
   &:nth-child(odd) {
     margin-right: t-spacing(medium);
   }
