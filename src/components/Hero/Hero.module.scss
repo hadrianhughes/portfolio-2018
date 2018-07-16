@@ -2,7 +2,6 @@
 @import '../../styles/tools.scss';
 
 .root {
-  background-color: t-color(dark-grey);
   height: 100%;
   position: absolute;
   width: 100%;
@@ -17,7 +16,7 @@
 }
 
 .content {
-  color: t-color(white);
+  color: t-color(dark-grey);
   display: inline-block;
   margin-bottom: t-spacing(medium);
   text-align: left;

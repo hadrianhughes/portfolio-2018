@@ -4,6 +4,7 @@
 $tileSize: 110px;
 $tileSize--small: 180px;
 $tileSize--medium: 250px;
+$start_offset: 30px;
 
 .root {
   display: inline-block;
@@ -33,11 +34,13 @@ $tileSize--medium: 250px;
 }
 
 .item {
-  background-color: t-color(grey);
+  animation: item_enter .5s forwards;
+  background-color: t-color(light-grey);
   display: block;
   float: left;
   height: t-rem($tileSize);
   margin-bottom: t-spacing(medium);
+  opacity: 0;
   position: relative;
   width: t-rem($tileSize);
 
@@ -102,7 +105,7 @@ $tileSize--medium: 250px;
 
 .itemLabel {
   bottom: 0;
-  color: t-color(white);
+  color: t-color(dark-grey);
   padding-bottom: t-spacing(xsmall);
   position: absolute;
   text-align: center;
@@ -117,5 +120,16 @@ $tileSize--medium: 250px;
 
   @include t-respond-to-min(large) {
     font-size: t-font-size(large);
+  }
+}
+
+@keyframes item_enter {
+  from {
+    transform: translateY(#{t-rem($start_offset)});
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
