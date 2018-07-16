@@ -4,17 +4,21 @@ module.exports = {
   siteMetadata: {
     title: 'Gatsby Default Starter',
     navigation: [{
-      label: 'Example 1',
+      label: 'About me',
       url: '/404',
+      image: 'about.svg',
     }, {
-      label: 'Example 2',
+      label: 'My Skills',
       url: '/404',
+      image: 'skills.svg',
     }, {
-      label: 'Example 3',
+      label: 'Canvas Demo',
       url: '/404',
+      image: 'canvas.svg',
     }, {
-      label: 'Example 4',
+      label: 'Contact Me',
       url: '/404',
+      image: 'contact.svg',
     }],
   },
   plugins: [

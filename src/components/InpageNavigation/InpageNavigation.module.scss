@@ -41,7 +41,9 @@ $start_offset: 30px;
   height: t-rem($tileSize);
   margin-bottom: t-spacing(medium);
   opacity: 0;
+  padding: t-spacing(medium);
   position: relative;
+  text-decoration: none;
   width: t-rem($tileSize);
 
   @include t-respond-to-min(small) {
@@ -103,13 +105,23 @@ $start_offset: 30px;
   }
 }
 
+.itemImageWrapper {
+  box-sizing: border-box;
+  height: 80%;
+  padding-bottom: t-spacing(small);
+}
+
+.itemImage {
+  background-position-x: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
 .itemLabel {
-  bottom: 0;
   color: t-color(dark-grey);
+  height: 20%;
   padding-bottom: t-spacing(xsmall);
-  position: absolute;
   text-align: center;
-  text-decoration: none;
   width: 100%;
 
   @include t-respond-to-min(medium) {

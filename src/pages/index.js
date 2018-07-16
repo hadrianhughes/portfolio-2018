@@ -27,6 +27,7 @@ query PageQuery {
       navigation {
         label
         url
+        image
       }
     }
   }
