@@ -2,16 +2,54 @@
 @import '../../styles/tools.scss';
 
 .root {
+  animation: text_enter .5s forwards;
   color: t-color(dark-grey);
   font-family: 'FiraSans-ExtraLightItalic';
   font-size: t-font-size(xxlarge);
   margin-top: t-spacing(medium);
   text-align: center;
-  text-decoration: underline;
-  text-decoration-color: t-color(blue);
 
   @include t-respond-to-min(medium) {
     font-size: t-font-size(super);
     margin: t-spacing(large) 0;
+  }
+}
+
+.textWrapper {
+  position: relative;
+
+  &::after {
+    animation: line_enter .3s forwards .2s;
+    background-color: t-color(blue);
+    bottom: 0;
+    content: '';
+    height: 3px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    transform: translateX(-#{t-rem($s-start-offset-x)});
+    width: 100%;
+  }
+}
+
+@keyframes text_enter {
+  from {
+    opacity: 0;
+    transform: translateY(#{t-rem($s-start-offset-y)});
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes line_enter {
+  from {
+    opacity: 0;
+    transform: translateX(-#{t-rem($s-start-offset-x)});
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

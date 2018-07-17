@@ -4,7 +4,6 @@
 $tileSize: 110px;
 $tileSize--small: 180px;
 $tileSize--medium: 250px;
-$start_offset: 30px;
 $hover_offset: 10px;
 
 .root {
@@ -215,7 +214,7 @@ $hover_offset: 10px;
 
 @keyframes item_enter {
   from {
-    transform: translateY(#{t-rem($start_offset)});
+    transform: translateY(#{t-rem($s-start-offset-y)});
     opacity: 0;
   }
   to {
