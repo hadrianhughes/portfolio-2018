@@ -5,7 +5,7 @@ module.exports = {
     title: 'Gatsby Default Starter',
     navigation: [{
       label: 'About me',
-      url: '/404',
+      url: '/about',
       image: 'about',
     }, {
       label: 'My Skills',

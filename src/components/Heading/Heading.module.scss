@@ -1,0 +1,17 @@
+@import '../../styles/settings.scss';
+@import '../../styles/tools.scss';
+
+.root {
+  color: t-color(dark-grey);
+  font-family: 'FiraSans-ExtraLightItalic';
+  font-size: t-font-size(xxlarge);
+  margin-top: t-spacing(medium);
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: t-color(blue);
+
+  @include t-respond-to-min(medium) {
+    font-size: t-font-size(super);
+    margin-top: t-spacing(large);
+  }
+}
