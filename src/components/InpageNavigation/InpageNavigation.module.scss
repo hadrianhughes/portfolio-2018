@@ -5,6 +5,7 @@ $tileSize: 110px;
 $tileSize--small: 180px;
 $tileSize--medium: 250px;
 $start_offset: 30px;
+$hover_offset: 10px;
 
 .root {
   display: inline-block;
@@ -41,17 +42,21 @@ $start_offset: 30px;
   height: t-rem($tileSize);
   margin-bottom: t-spacing(medium);
   opacity: 0;
-  padding: t-spacing(medium);
+  padding: t-spacing(small);
   position: relative;
   text-decoration: none;
+  top: 0;
+  transition: top .2s;
   width: t-rem($tileSize);
 
   @include t-respond-to-min(small) {
     height: t-rem($tileSize--small);
+    padding: t-spacing(medium);
     width: t-rem($tileSize--small);
 
     @include t-landscape {
       height: t-rem($tileSize);
+      padding: t-spacing(small);
       width: t-rem($tileSize);
     }
   }
@@ -79,6 +84,7 @@ $start_offset: 30px;
 
   @include t-respond-to-min(xlarge) {
     height: t-rem($tileSize--medium);
+    padding: t-spacing(medium);
     width: t-rem($tileSize--medium);
   }
 
@@ -103,6 +109,15 @@ $start_offset: 30px;
       margin-right: t-spacing(medium);
     }
   }
+
+  &:hover {
+    position: relative;
+    top: -#{$hover_offset};
+
+    .itemImage::after {
+      opacity: 1;
+    }
+  }
 }
 
 .itemImageWrapper {
@@ -111,10 +126,57 @@ $start_offset: 30px;
   padding-bottom: t-spacing(xsmall);
 }
 
-.itemImage {
+.itemImage,
+.itemImage::after {
   background-position-x: center;
   background-repeat: no-repeat;
   height: 100%;
+}
+
+.itemImage {
+  position: relative;
+
+  &::after {
+    content: '';
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity .2s;
+    width: 100%;
+  }
+
+  &.icon_about {
+    background-image: url('/icons/about.svg');
+
+    &::after {
+      background-image: url('/icons/about_blue.svg');
+    }
+  }
+
+  &.icon_skills {
+    background-image: url('/icons/skills.svg');
+
+    &::after {
+      background-image: url('/icons/skills_blue.svg');
+    }
+  }
+
+  &.icon_canvas {
+    background-image: url('/icons/canvas.svg');
+
+    &::after {
+      background-image: url('/icons/canvas_blue.svg');
+    }
+  }
+
+  &.icon_github {
+    background-image: url('/icons/github.svg');
+
+    &::after {
+      background-image: url('/icons/github_blue.svg');
+    }
+  }
 }
 
 .itemLabel {

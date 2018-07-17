@@ -6,19 +6,19 @@ module.exports = {
     navigation: [{
       label: 'About me',
       url: '/404',
-      image: 'about.svg',
+      image: 'about',
     }, {
       label: 'My Skills',
       url: '/404',
-      image: 'skills.svg',
+      image: 'skills',
     }, {
       label: 'Canvas Demo',
       url: '/404',
-      image: 'canvas.svg',
+      image: 'canvas',
     }, {
       label: 'My projects',
       url: '/404',
-      image: 'github.svg',
+      image: 'github',
     }],
   },
   plugins: [

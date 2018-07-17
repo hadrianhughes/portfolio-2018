@@ -9,7 +9,7 @@ const InpageNavigation = ({ items }) => (
       items.map((item, i) => (
         <a className={s.item} href={item.url} key={i} style={{ animationDelay: `${i * 100}ms` }}>
           <div className={s.itemImageWrapper}>
-            <div className={s.itemImage} style={{ backgroundImage: `url('/icons/${item.image}')` }} />
+            <div className={`${s.itemImage} ${s[`icon_${item.image}`]}`} />
           </div>
           <div className={s.itemLabel}>{item.label}</div>
         </a>
