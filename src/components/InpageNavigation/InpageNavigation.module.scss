@@ -1,7 +1,7 @@
 @import '../../styles/settings.scss';
 @import '../../styles/tools.scss';
 
-$tileSize: 110px;
+$tileSize: 120px;
 $tileSize--small: 180px;
 $tileSize--medium: 250px;
 $hover_offset: 10px;
@@ -102,7 +102,7 @@ $hover_offset: 10px;
       margin-right: 0;
     }
 
-    margin-right: t-spacing(small);
+    margin-right: 1rem;
 
     @include t-respond-to-min(large) {
       margin-right: t-spacing(medium);
