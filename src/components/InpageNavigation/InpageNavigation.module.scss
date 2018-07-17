@@ -108,11 +108,7 @@ $start_offset: 30px;
 .itemImageWrapper {
   box-sizing: border-box;
   height: 80%;
-  padding-bottom: t-spacing(small);
-
-  @include t-respond-to-min(medium) {
-    padding-bottom: t-spacing(xsmall);
-  }
+  padding-bottom: t-spacing(xsmall);
 }
 
 .itemImage {
