@@ -12,6 +12,6 @@
 
   @include t-respond-to-min(medium) {
     font-size: t-font-size(super);
-    margin-top: t-spacing(large);
+    margin: t-spacing(large) 0;
   }
 }

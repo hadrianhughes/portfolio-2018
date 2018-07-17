@@ -40,7 +40,7 @@ $cols: 12;
   }
 };
 
-@include responsiveClasses(small);
+@include responsiveClasses(xsmall);
 
 @include t-respond-to-min(xsmall) {
   @include responsiveClasses(small);
