@@ -109,6 +109,10 @@ $start_offset: 30px;
   box-sizing: border-box;
   height: 80%;
   padding-bottom: t-spacing(small);
+
+  @include t-respond-to-min(medium) {
+    padding-bottom: t-spacing(xsmall);
+  }
 }
 
 .itemImage {
@@ -119,18 +123,34 @@ $start_offset: 30px;
 
 .itemLabel {
   color: t-color(dark-grey);
+  font-size: 0.8rem;
   height: 20%;
-  padding-bottom: t-spacing(xsmall);
   text-align: center;
   width: 100%;
 
+  @include t-respond-to-min(small) {
+    @include t-portrait {
+      font-size: t-font-size(medium);
+    }
+  }
+
   @include t-respond-to-min(medium) {
+    font-size: 0.8rem;
+
     @include t-portrait {
       font-size: t-font-size(large);
     }
   }
 
   @include t-respond-to-min(large) {
+    font-size: t-font-size(medium);
+
+    @include t-portrait {
+      font-size: t-font-size(large);
+    }
+  }
+
+  @include t-respond-to-min(xlarge) {
     font-size: t-font-size(large);
   }
 }

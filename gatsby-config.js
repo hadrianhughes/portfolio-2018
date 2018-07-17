@@ -16,9 +16,9 @@ module.exports = {
       url: '/404',
       image: 'canvas.svg',
     }, {
-      label: 'Contact Me',
+      label: 'My projects',
       url: '/404',
-      image: 'contact.svg',
+      image: 'github.svg',
     }],
   },
   plugins: [
