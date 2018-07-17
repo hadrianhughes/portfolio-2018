@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import Row from '../components/Row';
 import Column from '../components/Column';
 import Heading from '../components/Heading';
+import CircleImage from '../components/CircleImage';
 import TextBlock from '../components/TextBlock';
 
 const PageComponent = ({ data }) => {
-  const { title, text } = data.contentfulPage;
+  const { title, text, image } = data.contentfulPage;
   return (
     <div>
       <Row>
@@ -15,16 +16,26 @@ const PageComponent = ({ data }) => {
           <Heading text={title} />
         </Column>
       </Row>
-      <Row>
-        <Column small={12} medium={10} large={8} smallCentered>
-        {
-          text.text ?
-            <TextBlock text={text.text} />
-            :
-            null
-        }
-        </Column>
-      </Row>
+      {
+        image ?
+          <Row>
+            <Column xsmall={12} xsmallCentered>
+              <CircleImage src={image.file.url} alt={title} />
+            </Column>
+          </Row>
+          :
+          null
+      }
+      {
+        text.text ?
+          <Row>
+            <Column small={12} medium={10} large={8} xsmallCentered>
+              <TextBlock text={text.text} />
+            </Column>
+          </Row>
+          :
+          null
+      }
     </div>
   );
 };
@@ -43,6 +54,11 @@ export const pageQuery = graphql`
   query pageQuery {
     contentfulPage {
       title
+      image {
+        file {
+          url
+        }
+      }
       text {
         text
       }
