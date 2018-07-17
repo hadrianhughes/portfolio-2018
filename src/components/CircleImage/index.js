@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import s from './CircleImage.module.scss';
 
-const CircleImage = ({ src, alt }) => <img src={`${src}?r=100`} alt={alt} className={s.root} />;
+const CircleImage = ({ src, alt }) => <img src={`${src}?r=100&fm=jpg&fl=progressive`} alt={alt} className={s.root} />;
 
 CircleImage.propTypes = {
   src: PropTypes.string.isRequired,

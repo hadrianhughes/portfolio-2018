@@ -17,7 +17,7 @@ module.exports = {
       image: 'canvas',
     }, {
       label: 'My projects',
-      url: '/404',
+      url: 'https://github.com/hadrianhughes',
       image: 'github',
     }],
   },
