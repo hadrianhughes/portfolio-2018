@@ -8,7 +8,7 @@ import CircleImage from '../components/CircleImage';
 import TextBlock from '../components/TextBlock';
 
 const PageComponent = ({ data }) => {
-  const { title, text, image } = data.contentfulPage;
+  const { title, text, image, extraComponents } = data.contentfulPage;
   return (
     <div>
       <Row>
@@ -62,6 +62,7 @@ export const pageQuery = graphql`
       text {
         text
       }
+      extraComponents
     }
   }
 `;
