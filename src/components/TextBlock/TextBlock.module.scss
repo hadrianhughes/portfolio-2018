@@ -1,0 +1,18 @@
+@import '../../styles/settings.scss';
+@import '../../styles/tools.scss';
+
+.root {
+  animation: enter .5s forwards .3s;
+  opacity: 0;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(#{$s-start-offset-y});
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

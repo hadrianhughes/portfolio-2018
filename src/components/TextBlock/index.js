@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Markdown from 'react-markdown';
 
-const TextBlock = ({ text }) => <Markdown source={text} />;
+import s from './TextBlock.module.scss';
+
+const TextBlock = ({ text }) => <Markdown source={text} className={s.root} />;
 
 TextBlock.propTypes = {
   text: PropTypes.string.isRequired,
