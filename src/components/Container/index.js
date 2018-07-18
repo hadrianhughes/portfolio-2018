@@ -1,22 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './AnimationWrapper.module.scss';
+import s from './Container.module.scss';
 
-const AnimationWrapper = ({ children, index, className }) => (
+const Container = ({ children, index, className }) => (
   <div className={`${s.root} ${className}`} style={{ animationDelay: `${(index * 100) + 100}ms` }}>{ children }</div>
 );
 
-AnimationWrapper.propTypes = {
+Container.propTypes = {
   children: PropTypes.node,
   index: PropTypes.number,
   className: PropTypes.string,
 };
 
-AnimationWrapper.defaultProps = {
+Container.defaultProps = {
   children: null,
   index: 0,
   className: '',
 };
 
-export default AnimationWrapper;
+export default Container;

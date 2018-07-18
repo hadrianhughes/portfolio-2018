@@ -5,11 +5,11 @@
     "image": "about"
   }, {
     "label": "My Skills",
-    "url": "/404",
+    "url": "/skills",
     "image": "skills"
   }, {
     "label": "Canvas Demo",
-    "url": "/404",
+    "url": "/canvas",
     "image": "canvas"
   }, {
     "label": "My projects",

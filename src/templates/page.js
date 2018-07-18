@@ -28,6 +28,12 @@ const PageComponent = ({ data }) => (
                       </Column>
                     </Row>
                   );
+                case 'skillsGrid':
+                  return (
+                    <div>
+                      skills
+                    </div>
+                  );
                 default:
                   return null;
               }

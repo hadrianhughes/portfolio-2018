@@ -1,0 +1,22 @@
+{
+  "id": "skills",
+  "slug": "skills",
+  "content": [
+    {
+      "type": "heading",
+      "text": "My Skills"
+    },
+    {
+      "type": "textBlock",
+      "parts": [
+        {
+          "type": "paragraph",
+          "value": "Lorem ipsum dolor"
+        }
+      ]
+    },
+    {
+      "type": "skillsGrid"
+    }
+  ]
+}
