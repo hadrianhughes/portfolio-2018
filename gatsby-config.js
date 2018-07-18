@@ -2,32 +2,27 @@ require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
-    navigation: [{
-      label: 'About me',
-      url: '/about',
-      image: 'about',
-    }, {
-      label: 'My Skills',
-      url: '/404',
-      image: 'skills',
-    }, {
-      label: 'Canvas Demo',
-      url: '/404',
-      image: 'canvas',
-    }, {
-      label: 'My projects',
-      url: 'https://github.com/hadrianhughes',
-      image: 'github',
-    }],
+    title: 'Hadrian Hughes'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-transformer-json',
     {
-      resolve: 'gatsby-source-contentful',
+      resolve: 'gatsby-source-filesystem',
       options: {
-        spaceId: process.env.SPACE_ID,
-        accessToken: process.env.ACCESS_TOKEN,
+        path: `${__dirname}/data/homepage`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/data/pages/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/data/navigation`,
       },
     },
     'gatsby-plugin-sass',

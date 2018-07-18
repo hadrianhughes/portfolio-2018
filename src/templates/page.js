@@ -7,38 +7,30 @@ import Heading from '../components/Heading';
 import CircleImage from '../components/CircleImage';
 import TextBlock from '../components/TextBlock';
 
-const PageComponent = ({ data }) => {
-  const { title, text, image, extraComponents } = data.contentfulPage;
-  return (
-    <div>
-      <Row>
-        <Column small={12}>
-          <Heading text={title} />
-        </Column>
-      </Row>
-      {
-        image ?
-          <Row>
-            <Column xsmall={12} xsmallCentered>
-              <CircleImage src={image.file.url} alt={title} />
-            </Column>
-          </Row>
-          :
-          null
-      }
-      {
-        text.text ?
-          <Row>
-            <Column small={12} medium={10} large={8} xsmallCentered>
-              <TextBlock text={text.text} />
-            </Column>
-          </Row>
-          :
-          null
-      }
-    </div>
-  );
-};
+const PageComponent = ({ data }) => (
+  <div>
+    {
+      data.pagesJson.content.map((item, i) => {
+        switch (item.type) {
+          case 'heading':
+            return <Heading key={i} text={item.text} />;
+          case 'profileImage':
+            return <CircleImage key={i} src={item.src} alt="temp" />;
+          case 'textBlock':
+            return (
+              <Row key={i}>
+                <Column xsmall={12} medium={10} large={8} xsmallCentered>
+                  <TextBlock text={item.parts} />
+                </Column>
+              </Row>
+            );
+          default:
+            return null;
+        }
+      })
+    }
+  </div>
+);
 
 PageComponent.propTypes = {
   data: PropTypes.object,
@@ -51,18 +43,17 @@ PageComponent.defaultProps = {
 export default PageComponent;
 
 export const pageQuery = graphql`
-  query pageQuery {
-    contentfulPage {
-      title
-      image {
-        file {
-          url
+  query pageQuery($id: String!) {
+    pagesJson(id: { eq: $id }) {
+      content {
+        type
+        text
+        src
+        parts {
+          type
+          value
         }
       }
-      text {
-        text
-      }
-      extraComponents
     }
   }
 `;

@@ -1,0 +1,19 @@
+{
+  "items": [{
+    "label": "About me",
+    "url": "/about",
+    "image": "about"
+  }, {
+    "label": "My Skills",
+    "url": "/404",
+    "image": "skills"
+  }, {
+    "label": "Canvas Demo",
+    "url": "/404",
+    "image": "canvas"
+  }, {
+    "label": "My projects",
+    "url": "https://github.com/hadrianhughes",
+    "image": "github"
+  }]
+}

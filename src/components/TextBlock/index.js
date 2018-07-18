@@ -1,13 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Markdown from 'react-markdown';
 
 import s from './TextBlock.module.scss';
 
-const TextBlock = ({ text }) => <Markdown source={text} className={s.root} />;
+const TextBlock = ({ text }) => (
+  <div>
+    {
+      text.map((block, i) => <p key={i}>{ block.value }</p>)
+    }
+  </div>
+);
 
 TextBlock.propTypes = {
-  text: PropTypes.string.isRequired,
+  text: PropTypes.array,
+};
+
+TextBlock.defaultProps = {
+  text: [],
 };
 
 export default TextBlock;

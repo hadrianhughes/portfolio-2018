@@ -1,0 +1,25 @@
+{
+  "id": "about",
+  "slug": "about",
+  "content": [
+    {
+      "type": "heading",
+      "text": "About Me"
+    }, {
+      "type": "profileImage",
+      "src": "/images/profile.jpg"
+    }, {
+      "type": "textBlock",
+      "parts": [
+        {
+          "type": "paragraph",
+          "value": "Lorem ipsum"
+        },
+        {
+          "type": "paragraph",
+          "value": "dolor sit amet"
+        }
+      ]
+    }
+  ]
+}
