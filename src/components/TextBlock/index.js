@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './TextBlock.module.scss';
-
 const TextBlock = ({ text }) => (
   <div>
     {

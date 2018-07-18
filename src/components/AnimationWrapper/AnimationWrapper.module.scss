@@ -1,12 +1,11 @@
-@import '../../styles/settings.scss';
-@import '../../styles/tools.scss';
+$s-start-offset-y: 30px;
 
 .root {
-  animation: enter .5s forwards .3s;
+  animation: enter_vertical .5s forwards;
   opacity: 0;
 }
 
-@keyframes enter {
+@keyframes enter_vertical {
   from {
     opacity: 0;
     transform: translateY(#{$s-start-offset-y});

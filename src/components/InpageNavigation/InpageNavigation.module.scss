@@ -34,7 +34,6 @@ $hover_offset: 10px;
 }
 
 .item {
-  animation: item_enter .5s forwards;
   background-color: t-color(light-grey);
   display: block;
   float: left;
@@ -43,7 +42,6 @@ $hover_offset: 10px;
   opacity: 0;
   padding: t-spacing(small);
   position: relative;
-  text-decoration: none;
   top: 0;
   transition: top .2s;
   width: t-rem($tileSize);
@@ -117,6 +115,10 @@ $hover_offset: 10px;
       opacity: 1;
     }
   }
+}
+
+.itemLink {
+  text-decoration: none;
 }
 
 .itemImageWrapper {
@@ -209,16 +211,5 @@ $hover_offset: 10px;
 
   @include t-respond-to-min(xlarge) {
     font-size: t-font-size(large);
-  }
-}
-
-@keyframes item_enter {
-  from {
-    transform: translateY(#{t-rem($s-start-offset-y)});
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
   }
 }

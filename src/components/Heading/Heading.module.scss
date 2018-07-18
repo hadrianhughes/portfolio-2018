@@ -1,8 +1,9 @@
 @import '../../styles/settings.scss';
 @import '../../styles/tools.scss';
 
+$s-start-offset-x: 100px;
+
 .root {
-  animation: text_enter .5s forwards;
   color: t-color(dark-grey);
   font-family: 'FiraSans-ExtraLightItalic';
   font-size: t-font-size(xxlarge);
@@ -19,7 +20,7 @@
   position: relative;
 
   &::after {
-    animation: line_enter .3s forwards .2s;
+    animation: line_enter .3s forwards .3s;
     background-color: t-color(blue);
     bottom: 0;
     content: '';
@@ -29,17 +30,6 @@
     position: absolute;
     transform: translateX(-#{t-rem($s-start-offset-x)});
     width: 100%;
-  }
-}
-
-@keyframes text_enter {
-  from {
-    opacity: 0;
-    transform: translateY(#{t-rem($s-start-offset-y)});
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
