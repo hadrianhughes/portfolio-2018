@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import AnimationWrapper from '../components/AnimationWrapper';
+import Container from '../components/Container';
 import Row from '../components/Row';
 import Column from '../components/Column';
 import Heading from '../components/Heading';
@@ -12,7 +12,7 @@ const PageComponent = ({ data }) => (
   <div>
     {
       data.pagesJson.content.map((item, i) => (
-        <AnimationWrapper key={i} index={i}>
+        <Container key={i} index={i}>
           {
             (() => {
               switch (item.type) {
@@ -39,7 +39,7 @@ const PageComponent = ({ data }) => (
               }
             })()
           }
-        </AnimationWrapper>
+        </Container>
       ))
     }
   </div>
