@@ -11,7 +11,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           edges {
             node {
               id
-              slug
+              url
             }
           }
         }
@@ -26,7 +26,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
       result.data.allPagesJson.edges.forEach(edge => {
         createPage({
-          path: `/${edge.node.slug}`,
+          path: edge.node.url,
           component: pageTemplate,
           context: {
             id: edge.node.id,

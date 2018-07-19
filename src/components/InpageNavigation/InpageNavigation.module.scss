@@ -8,6 +8,8 @@ $tileSize--xlarge: 250px;
 $hover_offset: 10px;
 
 .root {
+  @include t-clearfix;
+
   display: inline-block;
   width: calc((#{$tileSize} * 2) + #{t-spacing(medium)});
 
@@ -29,12 +31,6 @@ $hover_offset: 10px;
 
   @include t-landscape {
     width: auto;
-  }
-
-  &::after {
-    content: '';
-    clear: both;
-    display: table;
   }
 }
 

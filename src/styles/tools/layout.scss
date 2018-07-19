@@ -6,3 +6,29 @@
 @function t-spacing($key, $multiplier: 1) {
   @return t-rem(map-get($s-spacing, $key) * $multiplier);
 }
+
+@mixin t-clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+@mixin t-center($direction: horizontal) {
+  position: absolute;
+
+  @if ($direction == both) {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @else if ($direction == vertical) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @else {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

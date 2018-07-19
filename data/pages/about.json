@@ -1,6 +1,6 @@
 {
   "id": "about",
-  "slug": "about",
+  "url": "/about",
   "content": [
     {
       "type": "heading",

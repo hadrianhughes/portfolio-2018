@@ -1,0 +1,120 @@
+@import '../../styles/settings.scss';
+@import '../../styles/tools.scss';
+
+$height: 35px;
+$height--large: 45px;
+
+.root {
+  background-color: t-color(xlight-grey);
+  border-top: 1px solid t-color(light-grey);
+  bottom: 0;
+  box-sizing: content-box;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+}
+
+.link,
+.imageWrapper,
+.image,
+.label {
+  display: block;
+  float: left;
+}
+
+.linkWrapper {
+  display: inline-block;
+}
+
+.link {
+  @include t-clearfix;
+
+  box-sizing: content-box;
+  height: t-rem($height);
+  padding: t-spacing(xsmall) t-spacing(xsmall);
+  
+  @include t-respond-to-min(large) {
+    height: t-rem($height--large);
+    padding: t-spacing(xsmall) t-rem(6px);
+  }
+
+  &.current,
+  &:hover {
+    .image::after {
+      opacity: 1;
+    }
+  }
+}
+
+.imageWrapper {
+  height: 100%;
+}
+
+.image {
+  height: t-rem($height);
+  margin-bottom: 0;
+  position: relative;
+  width: t-rem($height);
+
+  @include t-respond-to-min(large) {
+    height: t-rem($height--large);
+    width: t-rem($height--large);
+  }
+
+  &::after {
+    background-repeat: no-repeat;
+    content: '';
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity .2s;
+    width: 100%;
+  }
+
+  &.icon_about {
+    background-image: url('/icons/about.svg');
+
+    &::after {
+      background-image: url('/icons/about_blue.svg');
+    }
+  }
+
+  &.icon_skills {
+    background-image: url('/icons/skills.svg');
+
+    &::after {
+      background-image: url('/icons/skills_blue.svg');
+    }
+  }
+
+  &.icon_canvas {
+    background-image: url('/icons/canvas.svg');
+
+    &::after {
+      background-image: url('/icons/canvas_blue.svg');
+    }
+  }
+
+  &.icon_github {
+    background-image: url('/icons/github.svg');
+
+    &::after {
+      background-image: url('/icons/github_blue.svg');
+    }
+  }
+}
+
+.label {
+  display: none;
+  height: 100%;
+  line-height: t-rem($height);
+  padding: 0 t-spacing(large) 0 t-spacing(small);
+
+  @include t-respond-to-min(large) {
+    display: block;
+    line-height: t-rem($height--large);
+  }
+}

@@ -1,12 +1,11 @@
+@import '../../styles/settings.scss';
+@import '../../styles/tools.scss';
+
 $maxWidth: 1400px;
 
 .root {
+  @include t-clearfix;
+
   margin: 0 auto;
   max-width: $maxWidth;
-
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
 }

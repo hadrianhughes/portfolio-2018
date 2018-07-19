@@ -5,6 +5,9 @@ $gutter: 1rem;
 $cols: 12;
 
 .root {
+  @include t-clearfix;
+
+  box-sizing: border-box;
   float: left;
   padding-left: $gutter;
   padding-right: $gutter;
@@ -12,12 +15,6 @@ $cols: 12;
 
   &:last-child:not(:first-child) {
     float: right;
-  }
-
-  &::after {
-    content: '';
-    clear: both;
-    display: table;
   }
 }
 

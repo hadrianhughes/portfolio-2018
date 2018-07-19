@@ -7,41 +7,47 @@ import Column from '../components/Column';
 import Heading from '../components/Heading';
 import CircleImage from '../components/CircleImage';
 import TextBlock from '../components/TextBlock';
+import Navigation from '../components/Navigation';
 
 const PageComponent = ({ data }) => (
   <div>
-    {
-      data.pagesJson.content.map((item, i) => (
-        <Container key={i} index={i}>
-          {
-            (() => {
-              switch (item.type) {
-                case 'heading':
-                  return <Heading text={item.text} />;
-                case 'profileImage':
-                  return <CircleImage key={i} src={item.src} alt="temp" />;
-                case 'textBlock':
-                  return (
-                    <Row key={i}>
-                      <Column xsmall={12} medium={10} large={8} xsmallCentered>
-                        <TextBlock text={item.parts} />
-                      </Column>
-                    </Row>
-                  );
-                case 'skillsGrid':
-                  return (
-                    <div>
-                      skills
-                    </div>
-                  );
-                default:
-                  return null;
-              }
-            })()
-          }
-        </Container>
-      ))
-    }
+    <header>
+      <Navigation items={data.allNavigationJson.edges[0].node.items} current={data.pagesJson.url} />
+    </header>
+    <main>
+      {
+        data.pagesJson.content.map((item, i) => (
+          <Container key={i} index={i}>
+            {
+              (() => {
+                switch (item.type) {
+                  case 'heading':
+                    return <Heading key={i} text={item.text} />;
+                  case 'profileImage':
+                    return <CircleImage key={i} src={item.src} alt="temp" />;
+                  case 'textBlock':
+                    return (
+                      <Row key={i}>
+                        <Column xsmall={12} medium={10} large={8} xsmallCentered>
+                          <TextBlock text={item.parts} />
+                        </Column>
+                      </Row>
+                    );
+                  case 'skillsGrid':
+                    return (
+                      <div>
+                        skills
+                      </div>
+                    );
+                  default:
+                    return null;
+                }
+              })()
+            }
+          </Container>
+        ))
+      }
+    </main>
   </div>
 );
 
@@ -58,6 +64,7 @@ export default PageComponent;
 export const pageQuery = graphql`
   query pageQuery($id: String!) {
     pagesJson(id: { eq: $id }) {
+      url
       content {
         type
         text
@@ -65,6 +72,17 @@ export const pageQuery = graphql`
         parts {
           type
           value
+        }
+      }
+    }
+    allNavigationJson {
+      edges {
+        node {
+          items {
+            label
+            url
+            image
+          }
         }
       }
     }

@@ -7,7 +7,7 @@ $s-start-offset-x: 100px;
   color: t-color(dark-grey);
   font-family: 'FiraSans-ExtraLightItalic';
   font-size: t-font-size(xxlarge);
-  margin-top: t-spacing(medium);
+  margin: t-spacing(medium) 0 t-spacing(large);
   text-align: center;
 
   @include t-respond-to-min(medium) {
@@ -20,7 +20,7 @@ $s-start-offset-x: 100px;
   position: relative;
 
   &::after {
-    animation: line_enter .3s forwards .3s;
+    animation: line_enter .3s forwards .5s;
     background-color: t-color(blue);
     bottom: -3px;
     content: '';
