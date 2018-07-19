@@ -22,7 +22,7 @@ $s-start-offset-x: 100px;
   &::after {
     animation: line_enter .3s forwards .3s;
     background-color: t-color(blue);
-    bottom: 0;
+    bottom: -3px;
     content: '';
     height: 3px;
     left: 0;
