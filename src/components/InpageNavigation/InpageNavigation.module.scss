@@ -2,24 +2,29 @@
 @import '../../styles/tools.scss';
 
 $tileSize: 120px;
-$tileSize--small: 180px;
-$tileSize--medium: 250px;
+$tileSize--small: 150px;
+$tileSize--large: 180px;
+$tileSize--xlarge: 250px;
 $hover_offset: 10px;
 
 .root {
   display: inline-block;
   width: calc((#{$tileSize} * 2) + #{t-spacing(medium)});
 
-  @include t-respond-to-min(small) {
+  @include t-respond-to-min(xsmall) {
     width: calc((#{$tileSize--small} * 2) + #{t-spacing(medium)});
   }
 
+  @include t-respond-to-min(small) {
+    width: calc((#{$tileSize--large} * 2) + #{t-spacing(medium)});
+  }
+
   @include t-respond-to-min(medium) {
-    width: calc((#{$tileSize--medium} * 2) + #{t-spacing(medium)});
+    width: calc((#{$tileSize--xlarge} * 2) + #{t-spacing(medium)});
   }
 
   @include t-respond-to-min(large) {
-    width: calc((#{$tileSize--medium} * 2) + #{t-spacing(large)});
+    width: calc((#{$tileSize--xlarge} * 2) + #{t-spacing(large)});
   }
 
   @include t-landscape {
@@ -46,10 +51,15 @@ $hover_offset: 10px;
   transition: top .2s;
   width: t-rem($tileSize);
 
-  @include t-respond-to-min(small) {
+  @include t-respond-to-min(xsmall) {
     height: t-rem($tileSize--small);
-    padding: t-spacing(medium);
     width: t-rem($tileSize--small);
+  }
+
+  @include t-respond-to-min(small) {
+    height: t-rem($tileSize--large);
+    padding: t-spacing(medium);
+    width: t-rem($tileSize--large);
 
     @include t-landscape {
       height: t-rem($tileSize);
@@ -59,8 +69,8 @@ $hover_offset: 10px;
   }
 
   @include t-respond-to-min(medium) {
-    height: t-rem($tileSize--medium);
-    width: t-rem($tileSize--medium);
+    height: t-rem($tileSize--xlarge);
+    width: t-rem($tileSize--xlarge);
 
     @include t-landscape {
       height: t-rem($tileSize);
@@ -69,20 +79,20 @@ $hover_offset: 10px;
   }
 
   @include t-respond-to-min(large) {
-    height: t-rem($tileSize--medium);
+    height: t-rem($tileSize--xlarge);
     margin-bottom: t-spacing(large);
-    width: t-rem($tileSize--medium);
+    width: t-rem($tileSize--xlarge);
 
     @include t-landscape {
-      height: t-rem($tileSize--small);
-      width: t-rem($tileSize--small);
+      height: t-rem($tileSize--large);
+      width: t-rem($tileSize--large);
     }
   }
 
   @include t-respond-to-min(xlarge) {
-    height: t-rem($tileSize--medium);
+    height: t-rem($tileSize--xlarge);
     padding: t-spacing(medium);
-    width: t-rem($tileSize--medium);
+    width: t-rem($tileSize--xlarge);
   }
 
   @include t-portrait {
