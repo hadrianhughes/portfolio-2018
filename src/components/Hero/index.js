@@ -7,7 +7,7 @@ import s from './Hero.module.scss';
 import InpageNavigation from '../InpageNavigation';
 
 const Hero = ({ subheading, navigation }) => (
-  <div className={s.root}>
+  <div className={`${s.root} ${[s.blue, s.orange, s.pink][Math.floor(Math.random() * 3)]}`}>
     <div className={s.wrapper}>
       <Row>
         <Column xsmall={12} xlarge={9} smallCentered>

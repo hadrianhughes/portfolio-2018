@@ -55,5 +55,15 @@
 }
 
 .highlight {
-  color: t-color(blue);
+  .blue & {
+    color: t-color(blue);
+  }
+
+  .orange & {
+    color: t-color(orange);
+  }
+
+  .pink & {
+    color: t-color(pink);
+  }
 }
