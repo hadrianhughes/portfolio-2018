@@ -10,6 +10,18 @@ $s-start-offset-x: 100px;
   margin: t-spacing(medium) 0 t-spacing(large);
   text-align: center;
 
+  &.color_orange .textWrapper::after {
+    background-color: t-color(orange);
+  }
+
+  &.color_pink .textWrapper::after {
+    background-color: t-color(pink);
+  }
+
+  &.color_black .textWrapper::after {
+    background-color: t-color(black);
+  }
+
   @include t-respond-to-min(medium) {
     font-size: t-font-size(super);
     margin: t-spacing(large) 0;

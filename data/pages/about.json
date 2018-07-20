@@ -1,6 +1,7 @@
 {
   "id": "about",
   "url": "/about",
+  "color": "blue",
   "content": [
     {
       "type": "heading",

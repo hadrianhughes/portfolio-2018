@@ -35,13 +35,11 @@ $hover_offset: 10px;
 }
 
 .item {
-  background-color: t-color(light-grey);
   display: block;
   float: left;
   height: t-rem($tileSize);
   margin-bottom: t-spacing(medium);
   opacity: 0;
-  padding: t-spacing(small);
   position: relative;
   top: 0;
   transition: top .2s;
@@ -54,12 +52,10 @@ $hover_offset: 10px;
 
   @include t-respond-to-min(small) {
     height: t-rem($tileSize--large);
-    padding: t-spacing(medium);
     width: t-rem($tileSize--large);
 
     @include t-landscape {
       height: t-rem($tileSize);
-      padding: t-spacing(small);
       width: t-rem($tileSize);
     }
   }
@@ -87,7 +83,6 @@ $hover_offset: 10px;
 
   @include t-respond-to-min(xlarge) {
     height: t-rem($tileSize--xlarge);
-    padding: t-spacing(medium);
     width: t-rem($tileSize--xlarge);
   }
 
@@ -120,28 +115,55 @@ $hover_offset: 10px;
     .itemImage::after {
       opacity: 1;
     }
+
+    .itemLink {
+      border: 1px solid t-color(grey);
+    }
+
+    .icon_skills .itemLink {
+      border: 1px solid t-color(orange);
+    }
   }
 }
 
 .itemLink {
+  background-color: t-color(light-grey);
+  border-radius: 100%;
+  display: block;
+  height: 100%;
+  padding: t-spacing(small);
   text-decoration: none;
+
+  @include t-respond-to-min(small) {
+    padding: t-spacing(medium);
+
+    @include t-landscape {
+      padding: t-spacing(small);
+    }
+  }
+
+  @include t-respond-to-min(xlarge) {
+    padding: t-spacing(medium);
+  }
 }
 
 .itemImageWrapper {
   box-sizing: border-box;
-  height: 80%;
+  height: 70%;
   padding-bottom: t-spacing(xsmall);
 }
 
 .itemImage,
 .itemImage::after {
-  background-position-x: center;
+  background-position: center center;
   background-repeat: no-repeat;
   height: 100%;
 }
 
 .itemImage {
+  margin: 0 auto;
   position: relative;
+  width: 50%;
 
   &::after {
     content: '';
@@ -153,7 +175,7 @@ $hover_offset: 10px;
     width: 100%;
   }
 
-  &.icon_about {
+  .icon_about & {
     background-image: url('/icons/about.svg');
 
     &::after {
@@ -161,27 +183,27 @@ $hover_offset: 10px;
     }
   }
 
-  &.icon_skills {
+  .icon_skills & {
     background-image: url('/icons/skills.svg');
 
     &::after {
-      background-image: url('/icons/skills_blue.svg');
+      background-image: url('/icons/skills_orange.svg');
     }
   }
 
-  &.icon_canvas {
+  .icon_canvas & {
     background-image: url('/icons/canvas.svg');
 
     &::after {
-      background-image: url('/icons/canvas_blue.svg');
+      background-image: url('/icons/canvas_pink.svg');
     }
   }
 
-  &.icon_github {
+  .icon_github & {
     background-image: url('/icons/github.svg');
 
     &::after {
-      background-image: url('/icons/github_blue.svg');
+      background-image: url('/icons/github_black.svg');
     }
   }
 }

@@ -9,10 +9,10 @@ const InpageNavigation = ({ items }) => (
   <div className={s.root}>
     {
       items.map((item, i) => (
-        <Container key={i} index={i} className={s.item}>
+        <Container key={i} index={i} className={`${s.item} ${s[`icon_${item.image}`]}`}>
           <Link to={item.url} style={{ animationDelay: `${i * 100}ms` }} className={s.itemLink}>
             <div className={s.itemImageWrapper}>
-              <div className={`${s.itemImage} ${s[`icon_${item.image}`]}`} />
+              <div className={s.itemImage} />
             </div>
             <div className={s.itemLabel}>{item.label}</div>
           </Link>

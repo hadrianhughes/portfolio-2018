@@ -1,6 +1,7 @@
 {
   "id": "skills",
   "url": "/skills",
+  "color": "orange",
   "content": [
     {
       "type": "heading",

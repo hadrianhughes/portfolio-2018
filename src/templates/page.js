@@ -22,7 +22,7 @@ const PageComponent = ({ data }) => (
               (() => {
                 switch (item.type) {
                   case 'heading':
-                    return <Heading key={i} text={item.text} />;
+                    return <Heading key={i} text={item.text} color={data.pagesJson.color} />;
                   case 'profileImage':
                     return <CircleImage key={i} src={item.src} alt="temp" />;
                   case 'textBlock':
@@ -65,6 +65,7 @@ export const pageQuery = graphql`
   query pageQuery($id: String!) {
     pagesJson(id: { eq: $id }) {
       url
+      color
       content {
         type
         text
