@@ -116,6 +116,7 @@ $height--large: 45px;
 }
 
 .label {
+  color: t-color(black);
   display: none;
   height: 100%;
   line-height: t-rem($height);
