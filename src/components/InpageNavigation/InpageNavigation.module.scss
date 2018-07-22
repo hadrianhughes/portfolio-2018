@@ -119,10 +119,6 @@ $hover_offset: 10px;
     .itemLink {
       border: 1px solid t-color(grey);
     }
-
-    .icon_skills .itemLink {
-      border: 1px solid t-color(orange);
-    }
   }
 }
 
@@ -173,14 +169,6 @@ $hover_offset: 10px;
     top: 0;
     transition: opacity .2s;
     width: 100%;
-  }
-
-  .icon_home & {
-    background-image: url('/icons/home.svg');
-
-    &::after {
-      background-image: url('/icons/home_grey.svg');
-    }
   }
 
   .icon_about & {
