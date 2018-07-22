@@ -175,6 +175,14 @@ $hover_offset: 10px;
     width: 100%;
   }
 
+  .icon_home & {
+    background-image: url('/icons/home.svg');
+
+    &::after {
+      background-image: url('/icons/home_grey.svg');
+    }
+  }
+
   .icon_about & {
     background-image: url('/icons/about.svg');
 
