@@ -1,9 +1,6 @@
 @import '../../styles/settings.scss';
 @import '../../styles/tools.scss';
 
-$height: 35px;
-$height--large: 45px;
-
 .root {
   background-color: t-color(xlight-grey);
   border-top: 1px solid t-color(light-grey);
@@ -31,11 +28,11 @@ $height--large: 45px;
   @include t-clearfix;
 
   box-sizing: content-box;
-  height: t-rem($height);
+  height: t-rem($s-nav-height);
   padding: t-spacing(xsmall) t-spacing(xsmall);
   
   @include t-respond-to-min(large) {
-    height: t-rem($height--large);
+    height: t-rem($s-nav-height--large);
     padding: t-spacing(xsmall) t-rem(6px);
   }
 
@@ -52,14 +49,14 @@ $height--large: 45px;
 }
 
 .image {
-  height: t-rem($height);
+  height: t-rem($s-nav-height);
   margin-bottom: 0;
   position: relative;
-  width: t-rem($height);
+  width: t-rem($s-nav-height);
 
   @include t-respond-to-min(large) {
-    height: t-rem($height--large);
-    width: t-rem($height--large);
+    height: t-rem($s-nav-height--large);
+    width: t-rem($s-nav-height--large);
   }
 
   &::after {
@@ -119,11 +116,11 @@ $height--large: 45px;
   color: t-color(black);
   display: none;
   height: 100%;
-  line-height: t-rem($height);
+  line-height: t-rem($s-nav-height);
   padding: 0 t-spacing(large) 0 t-spacing(small);
 
   @include t-respond-to-min(large) {
     display: block;
-    line-height: t-rem($height--large);
+    line-height: t-rem($s-nav-height--large);
   }
 }

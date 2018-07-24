@@ -2,23 +2,33 @@
 @import '../../styles/tools.scss';
 
 $skillSize: 50px;
+$subtextOffset: -50px;
 $highlightWidth: 10px;
 
 .skill {
-  border: 1px solid t-color(dark-grey);
+  border-bottom: 1px solid t-color(dark-grey);
   padding: t-spacing(xsmall) 0;
   padding-left: t-spacing(xsmall);
   position: relative;
+
+  &:last-child {
+    border-bottom: 0;
+  }
 
   &:hover {
     .highlight {
       transform: scaleX(3);
     }
+
+    .subtext {
+      opacity: 1;
+      transform: translateX(0px);
+    }
   }
 }
 
 .icon {
-  height: t-rem($skillSize);
+  width: t-rem($skillSize);
   margin-bottom: 0;
   vertical-align: middle;
 }
@@ -26,9 +36,23 @@ $highlightWidth: 10px;
 .name {
   color: t-color(dark-grey);
   cursor: default;
-  font-size: t-font-size(large);
+  font-size: 1.2rem;
   padding-left: t-spacing(small);
   vertical-align: middle;
+
+  @include t-respond-to-min(medium) {
+    font-size: t-font-size(large);
+  }
+}
+
+.subtext {
+  cursor: default;
+  float: right;
+  line-height: t-rem($skillSize);
+  margin-right: t-spacing(large);
+  opacity: 0;
+  transform: translateX(#{$subtextOffset});
+  transition: transform .2s, opacity .2s;
 }
 
 .highlight {

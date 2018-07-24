@@ -21,8 +21,61 @@
       "skills": [
         {
           "name": "React",
+          "subtext": "+React Router v4",
           "color": "#67DAF9",
           "icon": "react.svg"
+        },
+        {
+          "name": "Redux",
+          "color": "#764EB9",
+          "icon": "redux.svg"
+        },
+        {
+          "name": "Node.js",
+          "subtext": "+Express/Koa",
+          "color": "#8DC753",
+          "icon": "nodejs.svg"
+        },
+        {
+          "name": "Webpack",
+          "color": "#2479BE",
+          "icon": "webpack.svg"
+        },
+        {
+          "name": "Git",
+          "color": "#EE5138",
+          "icon": "git.svg"
+        },
+        {
+          "name": "Docker",
+          "color": "#1E9EE9",
+          "icon": "docker.png"
+        },
+        {
+          "name": "HTML5 Canvas",
+          "color": "#99DE00",
+          "icon": "canvas.png"
+        },
+        {
+          "name": "Javascript",
+          "subtext": "ES6",
+          "color": "#EFDA5B",
+          "icon": "javascript.svg"
+        },
+        {
+          "name": "HTML5",
+          "color": "#EF6534",
+          "icon": "html5.svg"
+        },
+        {
+          "name": "CSS3",
+          "color": "#2A53E0",
+          "icon": "css3.svg"
+        },
+        {
+          "name": "Handlebars",
+          "color": "#423427",
+          "icon": "handlebars.svg"
         }
       ]
     }

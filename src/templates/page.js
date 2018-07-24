@@ -73,6 +73,7 @@ export const pageQuery = graphql`
         }
         skills {
           name
+          subtext
           color
           icon
         }

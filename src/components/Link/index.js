@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import GatsbyLink from 'gatsby-link';
 
 const Link = ({ children, to, className, style }) => (
-  /^\/[^/]{1}.+$/.test(to) ?
+  /^\/[^/]{1}.+$/.test(to) || to === '/' ?
     <GatsbyLink to={to} className={className} style={style}>
       { children }
     </GatsbyLink>
