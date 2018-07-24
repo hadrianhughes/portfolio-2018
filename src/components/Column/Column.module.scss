@@ -39,19 +39,19 @@ $cols: 12;
 
 @include responsiveClasses(xsmall);
 
-@include t-respond-to-min(xsmall) {
+@include t-respond-to-min(small) {
   @include responsiveClasses(small);
 }
 
-@include t-respond-to-min(small) {
+@include t-respond-to-min(medium) {
   @include responsiveClasses(medium);
 }
 
-@include t-respond-to-min(medium) {
+@include t-respond-to-min(large) {
   @include responsiveClasses(large);
 }
 
-@include t-respond-to-min(large) {
+@include t-respond-to-min(xlarge) {
   @include responsiveClasses(xlarge);
 }
 

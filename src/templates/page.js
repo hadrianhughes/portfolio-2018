@@ -8,6 +8,7 @@ import Heading from '../components/Heading';
 import CircleImage from '../components/CircleImage';
 import TextBlock from '../components/TextBlock';
 import Navigation from '../components/Navigation';
+import SkillsList from '../components/SkillsList';
 
 const PageComponent = ({ data }) => (
   <div>
@@ -34,11 +35,7 @@ const PageComponent = ({ data }) => (
                       </Row>
                     );
                   case 'skillsGrid':
-                    return (
-                      <div>
-                        skills
-                      </div>
-                    );
+                    return <SkillsList list={item.skills} />;
                   default:
                     return null;
                 }
@@ -73,6 +70,11 @@ export const pageQuery = graphql`
         parts {
           type
           value
+        }
+        skills {
+          name
+          color
+          icon
         }
       }
     }

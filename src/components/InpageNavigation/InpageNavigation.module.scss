@@ -108,7 +108,8 @@ $hover_offset: 10px;
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     position: relative;
     top: -#{$hover_offset};
 
@@ -117,7 +118,7 @@ $hover_offset: 10px;
     }
 
     .itemLink {
-      border: 1px solid t-color(grey);
+      border: 1px solid t-color(dark-grey);
     }
   }
 }
@@ -129,6 +130,7 @@ $hover_offset: 10px;
   height: 100%;
   padding: t-spacing(small);
   text-decoration: none;
+  transition: border .2s;
 
   @include t-respond-to-min(small) {
     padding: t-spacing(medium);

@@ -18,8 +18,8 @@ const Navigation = ({ items, current }) => (
               label: 'Home',
             }]
             .concat(items)
-            .map(item => (
-              <Link to={item.url} className={`${s.link} ${item.url === current ? s.current : ''}`}>
+            .map((item, i) => (
+              <Link key={i} to={item.url} className={`${s.link} ${item.url === current ? s.current : ''}`}>
                 <span className={s.imageWrapper}>
                   <span className={`${s.image} ${s[`icon_${item.image}`]}`} />
                 </span>

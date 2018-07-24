@@ -1,0 +1,43 @@
+@import '../../styles/settings.scss';
+@import '../../styles/tools.scss';
+
+$skillSize: 50px;
+$highlightWidth: 10px;
+
+.skill {
+  border: 1px solid t-color(dark-grey);
+  padding: t-spacing(xsmall) 0;
+  padding-left: t-spacing(xsmall);
+  position: relative;
+
+  &:hover {
+    .highlight {
+      transform: scaleX(3);
+    }
+  }
+}
+
+.icon {
+  height: t-rem($skillSize);
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.name {
+  color: t-color(dark-grey);
+  cursor: default;
+  font-size: t-font-size(large);
+  padding-left: t-spacing(small);
+  vertical-align: middle;
+}
+
+.highlight {
+  display: block;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: right;
+  transition: transform .5s ease;
+  width: t-rem($highlightWidth);
+}

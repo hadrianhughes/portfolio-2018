@@ -17,7 +17,14 @@
       ]
     },
     {
-      "type": "skillsGrid"
+      "type": "skillsGrid",
+      "skills": [
+        {
+          "name": "React",
+          "color": "#67DAF9",
+          "icon": "react.svg"
+        }
+      ]
     }
   ]
 }
