@@ -42,14 +42,19 @@
           "icon": "webpack.svg"
         },
         {
-          "name": "Git",
-          "color": "#EE5138",
-          "icon": "git.svg"
-        },
-        {
           "name": "Docker",
           "color": "#1E9EE9",
           "icon": "docker.png"
+        },
+        {
+          "name": "GraphQL",
+          "color": "#E33CAA",
+          "icon": "graphql.svg"
+        },
+        {
+          "name": "Git",
+          "color": "#EE5138",
+          "icon": "git.svg"
         },
         {
           "name": "HTML5 Canvas",
