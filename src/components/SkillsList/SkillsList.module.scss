@@ -1,7 +1,8 @@
 @import '../../styles/settings.scss';
 @import '../../styles/tools.scss';
 
-$skillSize: 50px;
+$skillSize: 35px;
+$skillSize--large: 50px;
 $subtextOffset: -50px;
 $highlightWidth: 10px;
 
@@ -26,23 +27,31 @@ $highlightWidth: 10px;
 
     .subtext {
       opacity: 1;
-      transform: translateX(0px);
+      transform: translate(0px, -50%);
     }
   }
 }
 
 .icon {
-  width: t-rem($skillSize);
   margin-bottom: 0;
   vertical-align: middle;
+  width: t-rem($skillSize);
+  
+  @include t-respond-to-min(xsmall) {
+    width: t-rem($skillSize--large);
+  }
 }
 
 .name {
   color: t-color(dark-grey);
   cursor: default;
-  font-size: 1.2rem;
+  font-size: t-font-size(medium);
   padding-left: t-spacing(small);
   vertical-align: middle;
+
+  @include t-respond-to-min(xsmall) {
+    font-size: 1.2rem;
+  }
 
   @include t-respond-to-min(medium) {
     font-size: t-font-size(large);
@@ -51,12 +60,18 @@ $highlightWidth: 10px;
 
 .subtext {
   cursor: default;
-  float: right;
-  line-height: t-rem($skillSize);
+  display: none;
   margin-right: t-spacing(large);
   opacity: 0;
-  transform: translateX(#{$subtextOffset});
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(#{$subtextOffset}, -50%);
   transition: transform .2s, opacity .2s;
+
+  @include t-respond-to-min(medium) {
+    display: block;
+  }
 }
 
 .highlight {
