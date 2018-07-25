@@ -20,14 +20,16 @@ $highlightWidth: 10px;
     border-bottom: 0;
   }
 
-  &:hover {
-    .highlight {
-      transform: scaleX(3);
-    }
+  @include t-respond-to-min(medium) {
+    &:hover {
+      .highlight {
+        transform: scaleX(3);
+      }
 
-    .subtext {
-      opacity: 1;
-      transform: translate(0px, -50%);
+      .subtext {
+        opacity: 1;
+        transform: translate(0px, -50%);
+      }
     }
   }
 }
@@ -36,7 +38,7 @@ $highlightWidth: 10px;
   margin-bottom: 0;
   vertical-align: middle;
   width: t-rem($skillSize);
-  
+
   @include t-respond-to-min(xsmall) {
     width: t-rem($skillSize--large);
   }
