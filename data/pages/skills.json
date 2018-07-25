@@ -58,6 +58,7 @@
         },
         {
           "name": "Canvas",
+          "subtext": "Check out my canvas demo",
           "color": "#99DE00",
           "icon": "canvas.png"
         },
