@@ -6,7 +6,7 @@ import Row from '../Row';
 import Column from '../Column';
 
 const SkillsList = ({ list }) => (
-  <Row>
+  <Row className={s.root}>
     <Column xsmall={12} large={10} xlarge={8} xsmallCentered>
       {
         list.map(skill => (

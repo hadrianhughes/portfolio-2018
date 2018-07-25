@@ -5,6 +5,10 @@ $skillSize: 50px;
 $subtextOffset: -50px;
 $highlightWidth: 10px;
 
+.root {
+  margin-bottom: t-spacing(large);
+}
+
 .skill {
   border-bottom: 1px solid t-color(dark-grey);
   padding: t-spacing(xsmall) 0;

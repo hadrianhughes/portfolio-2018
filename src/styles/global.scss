@@ -626,7 +626,6 @@ html {
 
 body {
   background-color: t-color(white);
-  margin-bottom: t-spacing(large, 2);
   min-height: 100%;
 }
 
@@ -637,4 +636,13 @@ p {
 h1 {
   font-size: t-font-size(xlarge);
   font-weight: normal;
+}
+
+.nav-space {
+  margin-bottom: t-spacing(xlarge);
+
+  @include t-respond-to-min(large) {
+    margin-bottom: 0;
+    margin-top: t-spacing(xlarge, 1.5);
+  }
 }

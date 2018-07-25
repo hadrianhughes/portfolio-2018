@@ -11,7 +11,7 @@ import Navigation from '../components/Navigation';
 import SkillsList from '../components/SkillsList';
 
 const PageComponent = ({ data }) => (
-  <div>
+  <div className="nav-space">
     <header>
       <Navigation items={data.allNavigationJson.edges[0].node.items} current={data.pagesJson.url} />
     </header>
